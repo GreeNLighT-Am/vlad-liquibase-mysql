@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: unloading
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: unloading_request_id
+                  type: VARCHAR(36)
+                  constraints:
+                    unique: true
+              - column:
+                  name: source_system_code
+                  type: VARCHAR(750)
+                  constraints:
+                    foreignKeyName: fk_unloading_source_systems
+                    references: source_systems(code)
+              - column:
+                  name: date
+                  type: DATETIME
+              - column:
+                  name: total_docs
+                  type: INTEGER
+              - column:
+                  name: state_id
+                  type: BIGINT
+              - column:
+                  name: operational_day_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_unloading_operational_day
+                    references: operational_day(id)
+              - column:
+                  name: department_number
+                  type: INTEGER
+                  constraints:
+                    foreignKeyName: fk_unloading_departments
+                    references: departments(code)
+              - column:
+                  name: doc_category
+                  type: VARCHAR(30)

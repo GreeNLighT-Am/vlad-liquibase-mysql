@@ -1,0 +1,74 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: document
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: doctype_code
+                  type: VARCHAR(255)
+                  constraints:
+                    foreignKeyName: fk_document_doctypes
+                    references: doctypes(code)
+                    nullable: false
+              - column:
+                  name: number
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: format
+                  type: VARCHAR(10)
+              - column:
+                  name: bundle_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_document_bundle
+                    references: bundle(id)
+                    nullable: false
+              - column:
+                  name: timestamp
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: department_code
+                  type: INTEGER
+                  constraints:
+                    foreignKeyName: fk_document_departments
+                    references: departments(code)
+                    nullable: false
+              - column:
+                  name: doc_sum
+                  type: NUMERIC(20,2)
+              - column:
+                  name: sign1
+                  type: VARCHAR(255)
+              - column:
+                  name: sign2
+                  type: VARCHAR(255)
+              - column:
+                  name: sign3
+                  type: VARCHAR(255)
+              - column:
+                  name: unloading_request_id
+                  type: VARCHAR(255)
+                  constraints:
+                    foreignKeyName: fk_document_unloading
+                    references: unloading(unloading_request_id)
+              - column:
+                  name: od_p
+                  type: DATE
+                  constraints:
+                    foreignKeyName: fk_document_operational_day
+                    references: operational_day(date)

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createIndex:
+            indexName: idx_document_bundle_id
+            tableName: document
+            columns:
+              - column:
+                  name: bundle_id
+        - createIndex:
+            indexName: idx_document_unloading_request_id
+            tableName: document
+            columns:
+              - column:
+                  name: unloading_request_id

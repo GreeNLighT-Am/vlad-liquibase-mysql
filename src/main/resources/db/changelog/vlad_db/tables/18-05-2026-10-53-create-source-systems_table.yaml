@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: source_systems
+            columns:
+              - column:
+                  name: code
+                  type: VARCHAR(750)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(750)
+              - column:
+                  name: is_manual
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false

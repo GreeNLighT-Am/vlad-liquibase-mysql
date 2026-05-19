@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: vlad-liquibase-mysql
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/vlad_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    drop-first: false

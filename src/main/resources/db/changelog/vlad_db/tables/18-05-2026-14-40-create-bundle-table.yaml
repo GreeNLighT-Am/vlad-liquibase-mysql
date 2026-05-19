@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: bundle
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: document_count
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bundle_num
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: unloading_request_id
+                  type: VARCHAR(36)
+                  constraints:
+                    foreignKeyName: fk_bundle_unloading
+                    references: unloading(unloading_request_id)
+                    nullable: false
+              - column:
+                  name: type
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: od_p
+                  type: DATE
+                  constraints:
+                    foreignKeyName: fk_bundle_operational_day
+                    references: operational_day(date)
+                    nullable: false

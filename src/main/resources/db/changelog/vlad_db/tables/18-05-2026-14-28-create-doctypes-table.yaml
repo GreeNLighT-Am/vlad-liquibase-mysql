@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: doctypes
+            columns:
+              - column:
+                  name: code
+                  type: VARCHAR(100)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(750)
+              - column:
+                  name: group_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_doctypes_group_doctypes
+                    references: group_doctypes(id)
+                    nullable: false
+              - column:
+                  name: life_time
+                  type: NUMERIC(2)
