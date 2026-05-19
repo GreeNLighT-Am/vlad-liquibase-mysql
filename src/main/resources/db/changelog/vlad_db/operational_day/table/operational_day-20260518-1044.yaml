@@ -1,11 +1,11 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: operational_day-20260518-1044
       author: gutnik
       changes:
         - createTable:
             schemaName: vlad_db
-            tableName: group_doctypes
+            tableName: operational_day
             columns:
               - column:
                   name: id
@@ -15,8 +15,14 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: name
-                  type: VARCHAR(750)
+                  name: date
+                  type: DATE
               - column:
-                  name: unloading_category
-                  type: VARCHAR(30)
+                  name: state_id
+                  type: BIGINT
+        - createIndex:
+            indexName: idx_operational_day_date
+            tableName: operational_day
+            columns:
+              - column:
+                  name: date

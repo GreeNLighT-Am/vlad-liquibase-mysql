@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/vlad_db/document/table/document-20261805-1455.yaml
+
+  - include:
+      file: db/changelog/vlad_db/document/index/bundle_id-20261805-1540.yaml
+
+  - include:
+      file: db/changelog/vlad_db/document/index/unloading_request_id-20261805-1541.yaml

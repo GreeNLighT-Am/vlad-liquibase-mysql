@@ -1,27 +1,24 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-10-44-create-operational-day-table.yaml
+      file: db/changelog/vlad_db/operational_day/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-10-53-create-source-systems_table.yaml
+      file: db/changelog/vlad_db/source_systems/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-11-07-create-departments-table.yaml
+      file: db/changelog/vlad_db/departments/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-11-38-create-unloading-table.yaml
+      file: db/changelog/vlad_db/unloading/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-14-22-create-group-doctypes-table.yaml
+      file: db/changelog/vlad_db/group_doctypes/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-14-28-create-doctypes-table.yaml
+      file: db/changelog/vlad_db/doctypes/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-14-40-create-bundle-table.yaml
+      file: db/changelog/vlad_db/bundle/changelog-master.yaml
 
   - include:
-      file: db/changelog/vlad_db/tables/18-05-2026-14-55-create-document-table.yaml
-
-  - include:
-      file: db/changelog/vlad_db/indexes/18-05-2026-15-40-create-index-document.yaml
+      file: db/changelog/vlad_db/document/changelog-master.yaml

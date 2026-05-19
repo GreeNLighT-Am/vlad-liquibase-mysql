@@ -1,16 +1,15 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: source_systems-20261805-1053
       author: gutnik
       changes:
         - createTable:
             schemaName: vlad_db
-            tableName: departments
+            tableName: source_systems
             columns:
               - column:
                   name: code
-                  type: INTEGER
-                  autoIncrement: true
+                  type: VARCHAR(750)
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -18,13 +17,7 @@ databaseChangeLog:
                   name: name
                   type: VARCHAR(750)
               - column:
-                  name: create_date
-                  type: DATETIME
-              - column:
-                  name: modify_date
-                  type: DATETIME
-              - column:
-                  name: is_active
+                  name: is_manual
                   type: BOOLEAN
                   constraints:
                     nullable: false

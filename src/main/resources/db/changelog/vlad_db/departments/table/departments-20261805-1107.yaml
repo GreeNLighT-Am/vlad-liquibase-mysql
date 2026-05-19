@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: departments-20261805-1107
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: departments
+            columns:
+              - column:
+                  name: code
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(750)
+              - column:
+                  name: create_date
+                  type: DATETIME
+              - column:
+                  name: modify_date
+                  type: DATETIME
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: bundle-20261805-1440
       author: gutnik
       changes:
         - createTable:

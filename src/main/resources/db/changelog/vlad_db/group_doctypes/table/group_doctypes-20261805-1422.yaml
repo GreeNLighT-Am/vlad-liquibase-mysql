@@ -1,15 +1,16 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: group_doctypes-20261805-1422
       author: gutnik
       changes:
         - createTable:
             schemaName: vlad_db
-            tableName: source_systems
+            tableName: group_doctypes
             columns:
               - column:
-                  name: code
-                  type: VARCHAR(750)
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -17,7 +18,5 @@ databaseChangeLog:
                   name: name
                   type: VARCHAR(750)
               - column:
-                  name: is_manual
-                  type: BOOLEAN
-                  constraints:
-                    nullable: false
+                  name: unloading_category
+                  type: VARCHAR(30)

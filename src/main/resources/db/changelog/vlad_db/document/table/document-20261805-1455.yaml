@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: document-20261805-1455
       author: gutnik
       changes:
         - createTable:
