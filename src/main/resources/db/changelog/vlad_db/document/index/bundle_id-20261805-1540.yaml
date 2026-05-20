@@ -4,7 +4,7 @@ databaseChangeLog:
       author: gutnik
       changes:
         - createIndex:
-            indexName: idx_document_bundle_id
+            indexName: document_bundle_id_idx
             tableName: document
             columns:
               - column:

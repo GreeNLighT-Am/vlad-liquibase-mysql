@@ -9,22 +9,26 @@ databaseChangeLog:
             columns:
               - column:
                   name: code
-                  type: INTEGER
+                  type: integer
+                  remarks: "Внутренний код филиала"
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Имя филиала"
               - column:
                   name: create_date
-                  type: DATETIME
+                  type: datetime
+                  remarks: "Дата создания записи филиала"
               - column:
                   name: modify_date
-                  type: DATETIME
+                  type: datetime
+                  remarks: "Дата изменения записи филиала"
               - column:
                   name: is_active
-                  type: BOOLEAN
+                  type: boolean
+                  remarks: "Признак активности филиала, флаг soft delete"
                   constraints:
                     nullable: false

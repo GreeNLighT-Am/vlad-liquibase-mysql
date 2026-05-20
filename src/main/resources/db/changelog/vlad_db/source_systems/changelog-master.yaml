@@ -1,3 +1,4 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/vlad_db/source_systems/table/source_systems-20261805-1053.yaml
+      file: table/source_systems-20261805-1053.yaml
+      relativeToChangelogFile: true

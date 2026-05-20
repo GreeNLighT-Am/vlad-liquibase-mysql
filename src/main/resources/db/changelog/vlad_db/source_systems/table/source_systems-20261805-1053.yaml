@@ -9,15 +9,17 @@ databaseChangeLog:
             columns:
               - column:
                   name: code
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Уникальный код системы-источника"
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Имя системы-источника"
               - column:
                   name: is_manual
-                  type: BOOLEAN
+                  type: boolean
+                  remarks: "Флаг о ручном добавлении документов из данной системы источника"
                   constraints:
                     nullable: false

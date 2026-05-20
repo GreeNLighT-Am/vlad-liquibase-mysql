@@ -9,19 +9,20 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: date
-                  type: DATE
+                  type: date
+                  remarks: "Дата опердня"
               - column:
                   name: state_id
-                  type: BIGINT
+                  type: bigint
+                  remarks: "Идентификатор статуса опердня"
         - createIndex:
-            indexName: idx_operational_day_date
+            indexName: operational_day_date_idx
             tableName: operational_day
             columns:
               - column:

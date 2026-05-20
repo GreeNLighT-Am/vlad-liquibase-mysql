@@ -1,3 +1,4 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/vlad_db/unloading/table/unloading-20261805-1138.yaml
+      file: table/unloading-20261805-1138.yaml
+      relativeToChangelogFile: true

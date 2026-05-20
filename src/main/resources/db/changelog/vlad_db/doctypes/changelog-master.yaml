@@ -1,3 +1,4 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/vlad_db/doctypes/table/doctypes-20261805-1428.yaml
+      file: table/doctypes-20261805-1428.yaml
+      relativeToChangelogFile: true

@@ -9,43 +9,53 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: unloading_request_id
-                  type: VARCHAR(36)
+                  type: varchar(36)
+                  remarks: "Уникальный идентификатор выгрузки"
                   constraints:
                     unique: true
               - column:
                   name: source_system_code
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Код системы-источника выгрузки. Внешний ключ к полю code таблицы source_systems"
                   constraints:
-                    foreignKeyName: fk_unloading_source_systems
-                    references: source_systems(code)
+                    foreignKeyName: unloading_source_systems_code_fkey
+                    referencedTableName: source_systems
+                    referencedColumnNames: code
               - column:
                   name: date
-                  type: DATETIME
+                  type: datetime
+                  remarks: "Дата и время отправки выгрузки"
               - column:
                   name: total_docs
-                  type: INTEGER
+                  type: integer
+                  remarks: "Общее количество документов в выгрузке"
               - column:
                   name: state_id
-                  type: BIGINT
+                  type: bigint
+                  remarks: "Статус выгрузки и её документов"
               - column:
                   name: operational_day_id
-                  type: BIGINT
+                  type: bigint
+                  remarks: "Идентификатор операционного дня, которому принадлежит выгрузка. Внешний ключ к полю id таблицы operational_day"
                   constraints:
-                    foreignKeyName: fk_unloading_operational_day
-                    references: operational_day(id)
+                    foreignKeyName: unloading_operational_day_id_fkey
+                    referencedTableName: operational_day
+                    referencedColumnNames: id
               - column:
                   name: department_number
-                  type: INTEGER
+                  type: integer
+                  remarks: "Номер филиала, из которого отправлена выгрузка, внешний ключ к полю code таблицы departments"
                   constraints:
-                    foreignKeyName: fk_unloading_departments
-                    references: departments(code)
+                    foreignKeyName: unloading_departments_code_fkey
+                    referencedTableName: departments
+                    referencedColumnNames: code
               - column:
                   name: doc_category
-                  type: VARCHAR(30)
+                  type: varchar(30)
+                  remarks: "Категория систем-источников выгрузки – КДД, БДД, ФО"

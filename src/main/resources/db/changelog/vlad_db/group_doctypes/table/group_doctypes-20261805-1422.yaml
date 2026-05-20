@@ -9,14 +9,15 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Название группы типов документов"
               - column:
                   name: unloading_category
-                  type: VARCHAR(30)
+                  type: varchar(30)
+                  remarks: "Категория, к которой относится группа – КДД, БДД, ФО"

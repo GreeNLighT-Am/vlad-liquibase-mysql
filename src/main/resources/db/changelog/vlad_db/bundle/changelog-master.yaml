@@ -1,3 +1,4 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/vlad_db/bundle/table/bundle-20261805-1440.yaml
+      file: table/bundle-20261805-1440.yaml
+      relativeToChangelogFile: true

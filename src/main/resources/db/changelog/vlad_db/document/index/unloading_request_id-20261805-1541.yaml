@@ -4,7 +4,7 @@ databaseChangeLog:
       author: gutnik
       changes:
         - createIndex:
-            indexName: idx_document_unloading_request_id
+            indexName: document_unloading_request_id_idx
             tableName: document
             columns:
               - column:

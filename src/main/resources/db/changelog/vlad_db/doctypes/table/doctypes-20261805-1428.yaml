@@ -9,20 +9,24 @@ databaseChangeLog:
             columns:
               - column:
                   name: code
-                  type: VARCHAR(100)
+                  type: varchar(100)
+                  remarks: "Уникальный код типа документов"
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: name
-                  type: VARCHAR(750)
+                  type: varchar(750)
+                  remarks: "Название типа документов"
               - column:
                   name: group_id
-                  type: BIGINT
+                  type: bigint
+                  remarks: "Идентификатор группы типов документа, к которым принадлежит данный тип документов. Внешний ключ к полю id таблицы group_doctypes "
                   constraints:
-                    foreignKeyName: fk_doctypes_group_doctypes
-                    references: group_doctypes(id)
+                    foreignKeyName: doctypes_group_doctypes_id_fkey
+                    referencedTableName: group_doctypes
+                    referencedColumnNames: id
                     nullable: false
               - column:
                   name: life_time
-                  type: NUMERIC(2)
+                  type: numeric(2)
+                  remarks: "Время жизни документа"

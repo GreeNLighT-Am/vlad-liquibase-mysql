@@ -9,42 +9,49 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: BIGINT
+                  type: bigint
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: status
-                  type: VARCHAR(100)
+                  type: varchar(100)
+                  remarks: "Статус обработки сообщения и связанных с ним документов"
                   constraints:
                     nullable: false
               - column:
                   name: document_count
-                  type: INTEGER
+                  type: integer
+                  remarks: "Количество документов в сообщении"
                   constraints:
                     nullable: false
               - column:
                   name: bundle_num
-                  type: INTEGER
+                  type: integer
+                  remarks: "Номер сообщения в выгрузке"
                   constraints:
                     nullable: false
               - column:
                   name: unloading_request_id
-                  type: VARCHAR(36)
+                  type: varchar(36)
+                  remarks: "ID выгрузки, внешний ключ к полю unloading_request_id таблицы unloading"
                   constraints:
-                    foreignKeyName: fk_bundle_unloading
-                    references: unloading(unloading_request_id)
+                    foreignKeyName: bundle_unloading_unloading_request_id_fkey
+                    referencedTableName: unloading
+                    referencedColumnNames: unloading_request_id
                     nullable: false
               - column:
                   name: type
-                  type: INTEGER
+                  type: integer
+                  remarks: "Тип сообщения в зависимости от содержимого"
                   constraints:
                     nullable: false
               - column:
                   name: od_p
-                  type: DATE
+                  type: date
+                  remarks: "Служебная колонка, внешний ключ к полю date таблицы operational_day"
                   constraints:
-                    foreignKeyName: fk_bundle_operational_day
-                    references: operational_day(date)
+                    foreignKeyName: bundle_operational_day_date_fkey
+                    referencedTableName: operational_day
+                    referencedColumnNames: date
                     nullable: false
