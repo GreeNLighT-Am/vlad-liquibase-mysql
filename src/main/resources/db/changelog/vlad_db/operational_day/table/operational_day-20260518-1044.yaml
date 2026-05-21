@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: operational_day-20260518-1044
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: operational_day
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: date
+                  type: date
+                  remarks: "Дата опердня"
+              - column:
+                  name: state_id
+                  type: bigint
+                  remarks: "Идентификатор статуса опердня"
+        - createIndex:
+            indexName: operational_day_date_idx
+            tableName: operational_day
+            columns:
+              - column:
+                  name: date

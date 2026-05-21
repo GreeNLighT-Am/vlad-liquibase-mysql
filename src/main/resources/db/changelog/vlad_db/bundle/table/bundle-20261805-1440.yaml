@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: bundle-20261805-1440
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: bundle
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: status
+                  type: varchar(100)
+                  remarks: "Статус обработки сообщения и связанных с ним документов"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: document_count
+                  type: integer
+                  remarks: "Количество документов в сообщении"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bundle_num
+                  type: integer
+                  remarks: "Номер сообщения в выгрузке"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: unloading_request_id
+                  type: varchar(36)
+                  remarks: "ID выгрузки, внешний ключ к полю unloading_request_id таблицы unloading"
+                  constraints:
+                    foreignKeyName: bundle_unloading_unloading_request_id_fkey
+                    referencedTableName: unloading
+                    referencedColumnNames: unloading_request_id
+                    nullable: false
+              - column:
+                  name: type
+                  type: integer
+                  remarks: "Тип сообщения в зависимости от содержимого"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: od_p
+                  type: date
+                  remarks: "Служебная колонка, внешний ключ к полю date таблицы operational_day"
+                  constraints:
+                    foreignKeyName: bundle_operational_day_date_fkey
+                    referencedTableName: operational_day
+                    referencedColumnNames: date
+                    nullable: false

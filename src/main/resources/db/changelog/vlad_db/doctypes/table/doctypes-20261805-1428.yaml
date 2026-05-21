@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: doctypes-20261805-1428
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: doctypes
+            columns:
+              - column:
+                  name: code
+                  type: varchar(100)
+                  remarks: "Уникальный код типа документов"
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(750)
+                  remarks: "Название типа документов"
+              - column:
+                  name: group_id
+                  type: bigint
+                  remarks: "Идентификатор группы типов документа, к которым принадлежит данный тип документов. Внешний ключ к полю id таблицы group_doctypes "
+                  constraints:
+                    foreignKeyName: doctypes_group_doctypes_id_fkey
+                    referencedTableName: group_doctypes
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: life_time
+                  type: numeric(2)
+                  remarks: "Время жизни документа"

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: source_systems-20261805-1053
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: source_systems
+            columns:
+              - column:
+                  name: code
+                  type: varchar(750)
+                  remarks: "Уникальный код системы-источника"
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(750)
+                  remarks: "Имя системы-источника"
+              - column:
+                  name: is_manual
+                  type: boolean
+                  remarks: "Флаг о ручном добавлении документов из данной системы источника"
+                  constraints:
+                    nullable: false

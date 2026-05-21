@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+      file: vlad_db/operational_day/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/source_systems/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/departments/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/unloading/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/group_doctypes/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/doctypes/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/bundle/changelog-master.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: vlad_db/document/changelog-master.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: table/doctypes-20261805-1428.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: group_doctypes-20261805-1422
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: group_doctypes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(750)
+                  remarks: "Название группы типов документов"
+              - column:
+                  name: unloading_category
+                  type: varchar(30)
+                  remarks: "Категория, к которой относится группа – КДД, БДД, ФО"

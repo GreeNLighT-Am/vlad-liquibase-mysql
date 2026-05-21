@@ -1,0 +1,91 @@
+databaseChangeLog:
+  - changeSet:
+      id: document-20261805-1455
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: document
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: doctype_code
+                  type: varchar(255)
+                  remarks: "Код типа документов, к которому принадлежит данный документ. Внешний ключ к полю code таблицы doctypes"
+                  constraints:
+                    foreignKeyName: document_doctypes_code_fkey
+                    referencedTableName: doctypes
+                    referencedColumnNames: code
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(255)
+                  remarks: "Неуникальный внутренний номер документа в системе источнике"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: format
+                  type: varchar(10)
+                  remarks: "Формат документа"
+              - column:
+                  name: bundle_id
+                  type: bigint
+                  remarks: "ID сообщения, которому принадлежит документ, внешний ключ к полю id таблицы bundle"
+                  constraints:
+                    foreignKeyName: document_bundle_id_fkey
+                    referencedTableName: bundle
+                    referencedColumnNames: id
+                    nullable: false
+              - column:
+                  name: timestamp
+                  type: datetime
+                  remarks: "Дата создания документа для выгрузки"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: department_code
+                  type: integer
+                  remarks: "Код филиала, от которого поступил документ. Внешний ключ к полю code таблицы departments"
+                  constraints:
+                    foreignKeyName: document_departments_code_fkey
+                    referencedTableName: departments
+                    referencedColumnNames: code
+                    nullable: false
+              - column:
+                  name: doc_sum
+                  type: numeric(20,2)
+                  remarks: "Сумма денежных средств, учтенных в документе"
+              - column:
+                  name: sign1
+                  type: varchar(255)
+                  remarks: "ФИО или номер работника, поставившего первую подпись на документе"
+              - column:
+                  name: sign2
+                  type: varchar(255)
+                  remarks: "ФИО или номер работника, поставившего вторую подпись на документе"
+              - column:
+                  name: sign3
+                  type: varchar(255)
+                  remarks: "ФИО или номер работника, поставившего третью подпись на документе"
+              - column:
+                  name: unloading_request_id
+                  type: varchar(255)
+                  remarks: "ID выгрузки, внешний ключ к полю unloading_request_id таблицы unloading"
+                  constraints:
+                    foreignKeyName: document_unloading_unloading_request_id_fkey
+                    referencedTableName: unloading
+                    referencedColumnNames: unloading_request_id
+              - column:
+                  name: od_p
+                  type: date
+                  remarks: "Служебная колонка, внешний ключ к полю date таблицы operational_day"
+                  constraints:
+                    foreignKeyName: document_operational_day_date_fkey
+                    referencedTableName: operational_day
+                    referencedColumnNames: date
+                    nullable: false

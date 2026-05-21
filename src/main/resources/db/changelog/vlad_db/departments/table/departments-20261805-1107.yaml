@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: departments-20261805-1107
+      author: gutnik
+      changes:
+        - createTable:
+            schemaName: vlad_db
+            tableName: departments
+            columns:
+              - column:
+                  name: code
+                  type: integer
+                  remarks: "Внутренний код филиала"
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(750)
+                  remarks: "Имя филиала"
+              - column:
+                  name: create_date
+                  type: datetime
+                  remarks: "Дата создания записи филиала"
+              - column:
+                  name: modify_date
+                  type: datetime
+                  remarks: "Дата изменения записи филиала"
+              - column:
+                  name: is_active
+                  type: boolean
+                  remarks: "Признак активности филиала, флаг soft delete"
+                  constraints:
+                    nullable: false
