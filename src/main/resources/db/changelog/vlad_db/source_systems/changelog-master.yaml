@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: table/source_systems-20261805-1053.yaml
       relativeToChangelogFile: true
+  - include:
+      file: data/source_systems-20260520-1545.sql
+      relativeToChangelogFile: true

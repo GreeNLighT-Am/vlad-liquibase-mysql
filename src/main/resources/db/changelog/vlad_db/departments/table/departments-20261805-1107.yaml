@@ -11,7 +11,7 @@ databaseChangeLog:
                   name: code
                   type: integer
                   remarks: "Внутренний код филиала"
-                  autoIncrement: true
+                  autoIncrement: false
                   constraints:
                     primaryKey: true
               - column:

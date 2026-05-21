@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: table/doctypes-20261805-1428.yaml
       relativeToChangelogFile: true
+  - include:
+      file: data/doctypes-20260520-1614.sql
+      relativeToChangelogFile: true
