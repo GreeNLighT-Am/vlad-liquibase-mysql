@@ -1,11 +1,11 @@
 databaseChangeLog:
   - changeSet:
-      id: unloading_request_id-20261805-1541
+      id: bundle_id-20260518-1540
       author: gutnik
       changes:
         - createIndex:
-            indexName: document_unloading_request_id_idx
+            indexName: document_bundle_id_idx
             tableName: document
             columns:
               - column:
-                  name: unloading_request_id
+                  name: bundle_id

@@ -1,6 +1,3 @@
--- liquibase formatted sql
-
--- changeset gutnik:group_doctypes-20262005-1557
 INSERT INTO group_doctypes (id, name, unloading_category)
 VALUES (8, 'Первичные документы', 'БДД'),
        (9, 'Документы ЦБ', 'БДД'),

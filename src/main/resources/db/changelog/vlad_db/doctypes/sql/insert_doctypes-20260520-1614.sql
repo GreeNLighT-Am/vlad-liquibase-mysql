@@ -1,6 +1,3 @@
--- liquibase formatted sql
-
--- changeset gutnik:doctypes-20262005-16-14
 INSERT INTO doctypes (code, name, group_id)
 VALUES ('12792', 'Сверочный отчет', 11),
        ('88888888', 'Справка', 11),

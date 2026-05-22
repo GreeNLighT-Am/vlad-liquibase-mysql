@@ -1,6 +1,3 @@
--- liquibase formatted sql
-
--- changeset gutnik:source_systems-20262005-1545
 INSERT INTO source_systems (code, name, is_manual)
 VALUES ('0003.0006', 'ЕРС', false),
        ('0007.0014.0003', 'ОПСКП', false),

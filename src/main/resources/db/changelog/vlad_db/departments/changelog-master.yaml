@@ -1,7 +1,7 @@
 databaseChangeLog:
   - include:
-      file: table/departments-20261805-1107.yaml
+      file: table/departments-20260518-1107.yaml
       relativeToChangelogFile: true
   - include:
-      file: data/departments-20260520-1604.sql
+      file: table/departments-20260522-1147.yaml
       relativeToChangelogFile: true

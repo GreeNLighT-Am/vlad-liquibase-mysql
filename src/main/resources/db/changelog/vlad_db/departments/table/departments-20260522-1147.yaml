@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: departments-20260522-1147
+      author: gutnik
+      changes:
+        - sqlFile:
+            path: ../sql/insert_departments-20260520-1604.sql
+            relativeToChangelogFile: true

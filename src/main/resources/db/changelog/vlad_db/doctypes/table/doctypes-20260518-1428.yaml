@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: doctypes-20261805-1428
+      id: doctypes-20260518-1428
       author: gutnik
       changes:
         - createTable:

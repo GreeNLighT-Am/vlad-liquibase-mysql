@@ -1,4 +1,4 @@
 databaseChangeLog:
   - include:
-      file: table/bundle-20261805-1440.yaml
+      file: table/bundle-20260518-1440.yaml
       relativeToChangelogFile: true

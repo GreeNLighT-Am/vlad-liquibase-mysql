@@ -1,6 +1,3 @@
--- liquibase formatted sql
-
--- changeset gutnik:departments-20262005-1604
 INSERT INTO departments (code, name, is_active)
 VALUES (422170, 'Управление поддержки инвестиционного бизнеса', true),
        (447000, 'Департамент учета и отчетности', true),
