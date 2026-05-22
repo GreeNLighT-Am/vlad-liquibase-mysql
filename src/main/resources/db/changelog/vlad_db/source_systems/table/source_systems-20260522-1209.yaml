@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: source_systems-20260522-1209
+      author: gutnik
+      changes:
+        - sqlFile:
+            path: ../sql/insert_source_systems-20260520-1545.sql
+            relativeToChangelogFile: true

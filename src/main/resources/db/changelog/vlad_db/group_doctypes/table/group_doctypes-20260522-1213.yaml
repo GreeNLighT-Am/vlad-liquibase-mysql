@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: group_doctypes-20260522-1213
+      author: gutnik
+      changes:
+        - sqlFile:
+            path: ../sql/insert_group_doctypes-20260520-1557.sql
+            relativeToChangelogFile: true
