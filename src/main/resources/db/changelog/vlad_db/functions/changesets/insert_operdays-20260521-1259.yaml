@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_operdays-20260521-1259
+      author: gutnik
+      changes:
+        - sqlFile:
+            path: ../sql/insert_operdays/insert_operdays-20260521-1258.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;;
