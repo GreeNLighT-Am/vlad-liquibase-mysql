@@ -1,4 +1,6 @@
-CREATE FUNCTION IF NOT EXISTS insert_operdays()
+DROP FUNCTION IF EXISTS insert_operdays;;
+
+CREATE FUNCTION insert_operdays()
     RETURNS TEXT
     NOT DETERMINISTIC
     MODIFIES SQL DATA
@@ -22,20 +24,15 @@ BEGIN
         OR current_day_value < 27 THEN
         SET start_date = current_date_value;
         SET end_date = LAST_DAY(current_date_value);
-
     ELSEIF NOT EXISTS (SELECT 1 FROM operational_day) THEN
         SET start_date = current_date_value;
         SET end_date = LAST_DAY(DATE_ADD(current_date_value, INTERVAL 1 MONTH));
-
     ELSE
-
         SET start_date = DATE_ADD(DATE_FORMAT(current_date_value, '%Y-%m-01'), INTERVAL 1 MONTH);
         SET end_date = LAST_DAY(DATE_ADD(current_date_value, INTERVAL 1 MONTH));
-
     END IF;
 
     SET loop_date = start_date;
-
     WHILE loop_date <= end_date
         DO
             IF NOT EXISTS (SELECT 1 FROM operational_day WHERE date = loop_date) THEN
@@ -53,3 +50,5 @@ BEGIN
                       start_date, ' по ', end_date, '.');
     END IF;
 END;;
+#
+# SELECT insert_operdays();;

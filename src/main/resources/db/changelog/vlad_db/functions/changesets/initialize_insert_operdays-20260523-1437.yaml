@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: initialize_insert_operdays-20260523-1437
+      author: gutnik
+      changes:
+        - sql:
+            sql: SELECT insert_operdays();
