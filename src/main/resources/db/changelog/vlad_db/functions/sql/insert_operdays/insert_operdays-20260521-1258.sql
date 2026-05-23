@@ -50,5 +50,3 @@ BEGIN
                       start_date, ' по ', end_date, '.');
     END IF;
 END;;
-#
-# SELECT insert_operdays();;

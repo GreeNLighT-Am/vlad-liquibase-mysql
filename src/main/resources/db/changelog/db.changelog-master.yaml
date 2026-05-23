@@ -26,3 +26,6 @@ databaseChangeLog:
   - include:
       file: vlad_db/functions/changelog-master.yaml
       relativeToChangelogFile: true
+  - include:
+      file: vlad_db/schedulers/changelog-master.yaml
+      relativeToChangelogFile: true
