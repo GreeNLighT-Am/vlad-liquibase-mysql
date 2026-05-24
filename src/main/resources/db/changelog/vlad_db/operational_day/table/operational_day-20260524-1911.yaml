@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: operational_day-20260524-1911
+      author: gutnik
+      changes:
+        - addUniqueConstraint:
+            schemaName: vlad_db
+            tableName: operational_day
+            columnNames: date
+            constraintName: operational_day_date_uq

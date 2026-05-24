@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: table/operational_day-20260518-1044.yaml
       relativeToChangelogFile: true
+  - include:
+      file: table/operational_day-20260524-1911.yaml
+      relativeToChangelogFile: true
